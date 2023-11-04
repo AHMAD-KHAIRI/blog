@@ -1,5 +1,5 @@
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from datetime import date
 from flask import Flask, abort, render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap5
@@ -20,7 +20,7 @@ ckeditor = CKEditor(app)
 Bootstrap5(app)
 Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False, use_ssl=False, base_url=None)
 # load python environment variable
-load_dotenv()
+# load_dotenv()
 
 # Configure Flask-Login
 login_manager = LoginManager()
