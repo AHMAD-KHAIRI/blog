@@ -98,8 +98,8 @@ class BlogComment(db.Model):
     text = db.Column(db.Text, nullable=False)
 
 
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
 
 
 @app.route('/register', methods=["GET", "POST"])
@@ -275,4 +275,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=False, port=5003)
+    app.run(debug=False)
