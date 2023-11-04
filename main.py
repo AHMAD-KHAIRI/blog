@@ -44,13 +44,16 @@ def admin_only(function):
     return decorated_function
 
 # CONNECT TO DB (MySQL)
-MYSQL_USERNAME = os.environ.get("MYSQL_USERNAME")
-MYSQL_PASSWORD = os.environ.get("MYSQL_PASSWORD")
-MYSQL_DATABASE = os.environ.get("MYSQL_DATABASE")
-app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{MYSQL_USERNAME}:{MYSQL_PASSWORD}@127.0.0.1/{MYSQL_DATABASE}'
+# MYSQL_USERNAME = os.environ.get("MYSQL_USERNAME")
+# MYSQL_PASSWORD = os.environ.get("MYSQL_PASSWORD")
+# MYSQL_DATABASE = os.environ.get("MYSQL_DATABASE")
+# app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{MYSQL_USERNAME}:{MYSQL_PASSWORD}@127.0.0.1/{MYSQL_DATABASE}'
 
 # CONNECT TO DB (SQLite)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+
+# CONNECT TO DB (PostgreSQL)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///blog.db")
 
 db = SQLAlchemy()
 db.init_app(app)
